@@ -21,7 +21,8 @@ class IceCreamAdmin(admin.ModelAdmin):
         'is_published',
         'is_on_main',
         'category',
-        'wrapper'
+        'wrapper',
+        'output_order'
     )
     list_editable = (
         'is_published',

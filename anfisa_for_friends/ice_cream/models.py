@@ -66,11 +66,20 @@ class IceCream(PublishedModel):
     is_on_main = models.BooleanField(
         'На главную', 
         default=False)
+    output_order = models.PositiveSmallIntegerField(
+        default=100,
+        verbose_name='Порядок отображения'
+    )
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+
+
 
     class Meta:
         verbose_name = 'Мороженое'
         verbose_name_plural = 'Мороженое'
-
+        ordering = ('output_order', 'title')
+#       ordering = ('название поля1', 'название поля2') -- сортировка по возр, несколько
+#       ordering = ('-название поля') -- сортировка по убыван
 
     def __str__(self):
             return self.title 
